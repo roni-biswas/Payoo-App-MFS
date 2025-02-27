@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page | Payoo Mobile Bank | MFS</title>
+    <!-- font-awesome icon -->
+    <script src="https://kit.fontawesome.com/ba4eca73fe.js" crossorigin="anonymous"></script>
+    <!-- tailwind and daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-800">
+    <!-- home page -->
+    <section class="max-w-md min-h-screen bg-gray-200 mx-auto ">
+        <header>
+            <nav class="flex items-center min-h-8 border-b-1 border-gray-400 pb-4 p-6">
+                <div>
+                    <img class="w-10" src="assets/group.png" alt="">
+                </div>
+                <div class="flex justify-between items-center w-full">
+                    <div class="ml-4">
+                        <h1 class="text-2xl font-bold"><span class="font-extrabold">৳</span> <span
+                                id="main-balance">450</span>
+                        </h1>
+                        <p>available balance</p>
+                    </div>
+                    <button class="btn bg-indigo-400 text-white">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Log Out</button>
+                </div>
+            </nav>
+            <section class="p-6">
+                <div class="mb-3 flex items-center">
+                    <img class="w-8" src="assets/fire-icon.png" alt="">
+                    <h1 class="text-2xl font-bold ml-2">Welcome to Payooo!</h1>
+                </div>
+                <p class="text-gray-500 text-base">Enjoy easy and convenient financial services with us. Cashout charge
+                    is low and
+                </p>
+            </section>
+        </header>
+        <!-- menu button section -->
+        <section class="p-6">
+            <div class="cards grid grid-cols-3 gap-2">
+                <div id="add-money-btn" class="box cursor-pointer p-2 border border-gray-300 rounded-md text-center">
+                    <div class="w-8 mx-auto">
+                        <img src="./assets/wallet1.png" alt="">
+                    </div>
+                    <p class="text-sm text-gray-600 font-semibold mt-2">Add Money</p>
+                </div>
+                <div id="cash-out-btn" class="box cursor-pointer p-2 border border-gray-300 rounded-md text-center">
+                    <div class="w-8 mx-auto">
+                        <img src="./assets/send1.png" alt="">
+                    </div>
+                    <p class="text-sm text-gray-600 font-semibold mt-2">Cashout</p>
+                </div>
+                <div id="transfer-money-btn"
+                    class="box cursor-pointer p-2 border border-gray-300 rounded-md text-center">
+                    <div class="w-8 mx-auto">
+                        <img src="./assets/money1.png" alt="">
+                    </div>
+                    <p class="text-sm text-gray-600 font-semibold mt-2">Transfer Money</p>
+                </div>
+                <div id="get-bonus-btn" class="box cursor-pointer p-2 border border-gray-300 rounded-md text-center">
+                    <div class="w-8 mx-auto">
+                        <img src="./assets/financial1.png" alt="">
+                    </div>
+                    <p class="text-sm text-gray-600 font-semibold mt-2">Get Bonus</p>
+                </div>
+                <div id="pay-bill-btn" class="box cursor-pointer p-2 border border-gray-300 rounded-md text-center">
+                    <div class="w-8 mx-auto">
+                        <img src="./assets/purse1.png" alt="">
+                    </div>
+                    <p class="text-sm text-gray-600 font-semibold mt-2">Pay Bill</p>
+                </div>
+                <div id="transaction-btn" class="box cursor-pointer p-2 border border-gray-300 rounded-md text-center">
+                    <div class="w-8 mx-auto">
+                        <img src="./assets/transaction1.png" alt="">
+                    </div>
+                    <p class="text-sm text-gray-600 font-semibold mt-2">Transactions History</p>
+                </div>
+
+            </div>
+        </section>
+        <!-- add money section -->
+        <section id="add-money-section" class="p-6">
+            <h1 class="text-xl font-bold">Add Money</h1>
+            <div class="max-w-11/12 mx-auto">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
+                        <div class="card-body">
+                            <legend>Select A Bank</legend>
+                            <select id="selected" class="select" title="select bank">
+                                <option disabled selected value="">Select Bank</option>
+                                <option value="bKash">bKash</option>
+                                <option value="Nagad">Nagad</option>
+                                <option value="DDBL">DDBL</option>
+                            </select>
+                            <fieldset class="fieldset">
+                                <label class="fieldset-label">Account Number</label>
+                                <input value="01792552448" id="input-money-account-number" type="number" class="input"
+                                    placeholder="Account Number" required />
+                                <label class="fieldset-label">Amount</label>
+                                <input id="input-add-amount" type="number" class="input" placeholder="type your Amount"
+                                    required />
+                                <label class="fieldset-label">4digit PIN</label>
+                                <input value="1234" id="input-pin-number" type="text" class="input"
+                                    placeholder="Enter your pin" required />
+                                <button id="addMoney-btn" class="btn text-white bg-blue-500 mt-4">Add Money</button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- end -->
+        <!-- cash-out section -->
+        <section id="cash-out-section" class="p-6">
+            <h1 class="text-xl font-bold">Cash Out</h1>
+            <div class="max-w-11/12 mx-auto">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <div class="card  w-full max-w-sm shrink-0 shadow-2xl">
+                        <form class="card-body">
+                            <fieldset class="fieldset">
+                                <label class="fieldset-label">Account Number</label>
+                                <input value="01792552448" id="input-cash-out-account-number" type="number"
+                                    class="input" placeholder="Account Number" required />
+                                <label class="fieldset-label">Amount</label>
+                                <input id="input-cash-out-amount" type="number" class="input"
+                                    placeholder="type your Amount" required />
+                                <label class="fieldset-label">4digit PIN</label>
+                                <input value="1234" id="input-cash-out-pin" type="text" class="input"
+                                    placeholder="Enter your pin" required />
+                                <button id="cashOut-btn" class="btn text-white bg-blue-500 mt-4">Cash Out</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- end -->
+        <!-- transaction history section-->
+        <section id="transaction-section" class="p-6">
+            <h1 class="text-xl font-bold mb-4">Transactions History</h1>
+            <div id="transaction-history-container" class="max-w-11/12 mx-auto">
+                <!-- <div class="card w-full max-w-sm shrink-0 shadow-md mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">Added Money <span><span>200</span><span
+                                    class="font-extrabold">৳</span></span>
+                        </h2>
+                        <p>From Account No. 01792552448 <br> Bank Name: <span>Nagad</span> <br>TxID: 898249284
+                            <br> Now your balance : <span class="font-extrabold">৳</span><span
+                                class="font-bold">6523</span>
+                        </p>
+                        <p>date: 26-feb-25 12:01:59</p>
+                    </div>
+                </div>
+                <div class="card w-full max-w-sm shrink-0 shadow-md mb-3">
+                    <div class="card-body">
+                        <h2 class="card-title">Cash-Out <span><span>200</span><span
+                                    class="font-extrabold">৳</span></span>
+                        </h2>
+                        <p>From Account No. 01792552448 <br> Now your balance : <span
+                                class="font-extrabold">৳</span><span class="font-bold">6523</span> <br>TxID: 898249284
+                        </p>
+                        <p>Date: 26-feb-25 12:01:59</p>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+        <!-- Open message popup-->
+        <div id="message"></div>
+    </section>
+
+    <!-- utilities js -->
+    <script src="./utilities/utilities.js"></script>
+    <!-- section features -->
+    <script src="./script/features.js"></script>
+    <!-- form validation -->
+    <script src="./script/validation.js"></script>
+    <!-- added Money js -->
+    <script src="./script/addMoney.js"></script>
+    <!-- cash out js -->
+    <script src="./script/cashOut.js"></script>
+    <!-- transactions history -->
+    <script src="./script/transaction.js"></script>
+</body>
+
+</html>
